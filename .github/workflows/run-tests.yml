@@ -21,15 +21,10 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: |
-          pip install pytest requests
+        run: pip install pytest requests
 
       - name: Run tests
-        run: |
-          python -m pytest tests/ -v
+        run: python -m pytest tests/ -v
 
-      - name: Upload test report
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-report
-          path: .
+      - name: Success
+        run: echo "✅ Все тесты выполнены!"
